@@ -1,11 +1,12 @@
-import { PackSearchEnum } from '../enum/PackSearchEnum';
+import { PackActionType } from '../enum/PackActionType';
+import { Pack } from './Pack';
 
 export interface PackActionLoading {
-  type: PackSearchEnum.loading
+  type: PackActionType.loading
 }
 
-export interface PackActionSuccess { type: PackSearchEnum.success, payload: string[] }
+export interface PackActionSuccess { type: PackActionType.success, payload: Pack[] }
 
-export interface PackActionError { type: PackSearchEnum.error, payload: string }
+export interface PackActionError { type: PackActionType.error, payload: string }
 
 export type PackAction = PackActionLoading | PackActionSuccess | PackActionError;

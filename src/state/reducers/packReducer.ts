@@ -1,8 +1,15 @@
 import { PackState } from '../../interface/PackState';
 import { PackAction } from '../../interface/PackAction';
-import { PackActionType } from '../../enum/PackSearchEnum';
+import { PackActionType } from '../../enum/PackActionType';
+import { Pack } from '../../interface/Pack';
 
-export const packReducer = (state: PackState, action: PackAction): PackState => {
+const initialState: PackState = {
+  loading: false,
+  error: null,
+  data: [] as Pack[]
+}
+
+export const packReducer = (state: PackState = initialState, action: PackAction): PackState => {
   switch (action.type) {
     case PackActionType.loading:
       return { loading: true, error: null, data: [] };

@@ -1,5 +1,7 @@
+import { Pack } from "./Pack";
+
 export interface PackState {
-  data: string[];
+  data: Pack[];
   loading: boolean;
   error: string | null;
 }
