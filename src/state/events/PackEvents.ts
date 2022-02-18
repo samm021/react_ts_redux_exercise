@@ -15,7 +15,7 @@ export const searchPack = (searchTerm: string) => {
       const { data } = await axios.get(baseUrl, { params: { text: searchTerm } });
       dispatch({ type: PackActionType.success, payload: toPackList(data) });
     } catch (error) {
-      dispatch({ type: PackActionType.error, payload: error.message });
+      dispatch({ type: PackActionType.error, payload: 'ERROR' });
     }
   }
 };
